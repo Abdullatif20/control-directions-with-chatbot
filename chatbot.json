@@ -1,0 +1,295 @@
+{
+  "intents": [
+    {
+      "intent": "explain",
+      "examples": [
+        {
+          "text": "explain"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "human",
+      "examples": [
+        {
+          "text": "human"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Iknow",
+      "examples": [
+        {
+          "text": "Iknow"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "nothuman",
+      "examples": [
+        {
+          "text": "nothuman"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "welcome",
+      "examples": [
+        {
+          "text": "welcome"
+        }
+      ]
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1625656670223",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Welcome ",
+      "output": {
+        "generic": [
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "YES",
+                "value": {
+                  "input": {
+                    "text": "human"
+                  }
+                }
+              },
+              {
+                "label": "NO",
+                "value": {
+                  "input": {
+                    "text": "nothuman"
+                  }
+                }
+              }
+            ],
+            "description": "Hello Friend . I'm your assistant from Smart Method company , Are you human??",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#welcome || welcome",
+      "dialog_node": "node_5_1625655628370"
+    },
+    {
+      "type": "standard",
+      "title": "Yes",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good, have a nice day"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Start Again",
+                "value": {
+                  "input": {
+                    "text": "welcome"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Iknow",
+      "dialog_node": "node_6_1625652208535",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, let me explain that for you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "source": "https://images2.imgbox.com/c1/6b/X4civEoQ_o.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "as you can see in this picture, it is a robot competition who first bomb the balloon is win."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "we create this page to control of the directions of the base so the robot can go left or right ,forward or backward, or Stop."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Start Again",
+                "value": {
+                  "input": {
+                    "text": "#welcome"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#explain",
+      "dialog_node": "node_7_1625652427638",
+      "previous_sibling": "node_6_1625652208535"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "source": "https://media1.tenor.com/images/b69a315a8d7f683a9c4c2f9abaa7f49c/tenor.gif?itemid=10122873",
+            "description": "You shouldn't be here , GET OUT",
+            "response_type": "image"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Start again",
+                "value": {
+                  "input": {
+                    "text": "#welcome"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#nothuman",
+      "dialog_node": "node_8_1625656670223",
+      "previous_sibling": "node_7_1625652427638"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "title": "Welcome",
+            "options": [
+              {
+                "label": "Yes",
+                "value": {
+                  "input": {
+                    "text": "Iknow"
+                  }
+                }
+              },
+              {
+                "label": "NO",
+                "value": {
+                  "input": {
+                    "text": "explain"
+                  }
+                }
+              }
+            ],
+            "description": "Did you Know what is this page talk about?",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#human",
+      "dialog_node": "Welcome",
+      "previous_sibling": "node_5_1625655628370"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Speake",
+  "language": "en",
+  "description": ""
+}

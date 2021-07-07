@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset = "utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Control Directions</title>
+   <link rel="stylesheet" href="Style.css">
+   </head>
+   <body>
+   <form method="POST" action="insert.php">
+    
+	
+	<div class="Style">
+	<h1>Control Directions</h1>
+	<input type = "submit" name = "submit" class="button"  value ="Forward"></br></br>
+	<input type = "submit" name = "submit" class="button"  value ="Left">
+	<input type = "submit" name = "submit" class="button" style="background:red;"  value ="Stop">
+	<input type = "submit" name = "submit" class="button"  value ="Right"></br></br>
+	<input type = "submit" name = "submit" class="button"  value ="Backward">
+    </div></form>
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "764c2fbc-63b3-49dc-a1e0-061e13e2c399", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "b58f72dc-2a69-40e7-8581-dce50b65accd", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+   </body>
+</html>
