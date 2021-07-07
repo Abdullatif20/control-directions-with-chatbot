@@ -3,7 +3,8 @@
 ***
 This repository is about creating a control panel web page for controlling Directions of the base of the arm "with chatbot".
 ### 1. index.html : 
-![Screenshot (323)](https://user-images.githubusercontent.com/86498365/124356738-5ea70380-dc20-11eb-9c78-1ac69cc36091.png)
+![Screenshot (326)](https://user-images.githubusercontent.com/86498365/124754645-214db900-df33-11eb-90e7-1af8fc12075e.png)
+
 
    Contain 5 Buttons (Forward, Backward,Stop,Left,Right)
    
@@ -13,7 +14,8 @@ This repository is about creating a control panel web page for controlling Direc
    
 this page is Responsive web design with the mobile and different screens size.   
    
-   ![Screenshot (324)](https://user-images.githubusercontent.com/86498365/124357563-d414d300-dc24-11eb-9d77-ca251b59a0b5.png)
+   ![Screenshot (327)](https://user-images.githubusercontent.com/86498365/124754904-6671eb00-df33-11eb-8f84-c639f77b4893.png)
+
    
 
 ### 2. Style.css
